@@ -13,29 +13,20 @@
   </.modal>
 <% end %>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Body</th>
 
-      <th></th>
-    </tr>
-  </thead>
-  <tbody id="notes" phx-update="prepend">
-    <%= for note <- @notes do %>
-      <tr id={"note-#{note.id}"}>
-        <td><%= note.title %></td>
-        <td><%= note.body %></td>
+<div id="notes" phx-update="prepend">
+  <%= for note <- @notes do %>
+    <div id={"note-#{note.id}"}>
+      <h1><%= note.title %></h1>
+      <p><%= note.body %></p>
 
-        <td>
-          <span><%= live_redirect "Show", to: Routes.note_show_path(@socket, :show, note) %></span>
-          <span><%= live_patch "Edit", to: Routes.note_index_path(@socket, :edit, note) %></span>
-          <span><%= link "Delete", to: "#", phx_click: "delete", phx_value_id: note.id, data: [confirm: "Are you sure?"] %></span>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+      <td>
+        <span><%= live_redirect "Show", to: Routes.note_show_path(@socket, :show, note) %></span>
+        <span><%= live_patch "Edit", to: Routes.note_index_path(@socket, :edit, note) %></span>
+        <span><%= link "Delete", to: "#", phx_click: "delete", phx_value_id: note.id, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </div>
+  <% end %>
+</div>
 
 <span><%= live_patch "New Note", to: Routes.note_index_path(@socket, :new) %></span>
