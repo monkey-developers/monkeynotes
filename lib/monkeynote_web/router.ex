@@ -17,14 +17,14 @@ defmodule MonkeynoteWeb.Router do
   scope "/", MonkeynoteWeb do
     pipe_through :browser
 
-    live "/notes", NoteLive.Index, :index
+    live "/", NoteLive.Index, :index
     live "/notes/new", NoteLive.Index, :new
     live "/notes/:id/edit", NoteLive.Index, :edit
 
     live "/notes/:id", NoteLive.Show, :show
     live "/notes/:id/show/edit", NoteLive.Show, :edit
 
-    get "/", PageController, :index
+    # get "/", PageController, :index
   end
 
   # Other scopes may use custom stacks.

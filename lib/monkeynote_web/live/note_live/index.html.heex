@@ -1,4 +1,4 @@
-<h1>Listing Notes</h1>
+<h1 class="text-2xl font-bold">Listing Notes</h1>
 
 <%= if @live_action in [:new, :edit] do %>
   <.modal return_to={Routes.note_index_path(@socket, :index)}>
@@ -14,10 +14,10 @@
 <% end %>
 
 
-<div id="notes" phx-update="prepend">
+<div id="notes" phx-update="prepend" class="grid gap-2">
   <%= for note <- @notes do %>
-    <div id={"note-#{note.id}"}>
-      <h1><%= note.title %></h1>
+    <div id={"note-#{note.id}"} class="bg-slate-100 px-6 py-4 w-96 h-auto break-words rounded">
+      <h1 class="text-xl font-bold"><%= note.title %></h1>
       <p><%= note.body %></p>
 
       <td>
