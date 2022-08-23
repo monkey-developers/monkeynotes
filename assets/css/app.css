@@ -35,6 +35,11 @@
   margin: -1rem 0 2rem;
 }
 
+textarea {
+  resize: none;
+  height: auto;
+}
+
 /* LiveView specific classes for your customization */
 .phx-no-feedback.invalid-feedback,
 .phx-no-feedback .invalid-feedback {
