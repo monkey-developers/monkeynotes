@@ -1,0 +1,31 @@
+<h1>Show Note</h1>
+
+<%= if @live_action in [:edit] do %>
+  <.modal return_to={Routes.note_show_path(@socket, :show, @note)}>
+    <.live_component
+      module={MonkeynoteWeb.NoteLive.FormComponent}
+      id={@note.id}
+      title={@page_title}
+      action={@live_action}
+      note={@note}
+      return_to={Routes.note_show_path(@socket, :show, @note)}
+    />
+  </.modal>
+<% end %>
+
+<ul>
+
+  <li>
+    <strong>Title:</strong>
+    <%= @note.title %>
+  </li>
+
+  <li>
+    <strong>Body:</strong>
+    <%= @note.body %>
+  </li>
+
+</ul>
+
+<span><%= live_patch "Edit", to: Routes.note_show_path(@socket, :edit, @note), class: "button" %></span> |
+<span><%= live_redirect "Back", to: Routes.note_index_path(@socket, :index) %></span>
