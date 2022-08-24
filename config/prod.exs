@@ -21,8 +21,8 @@ config :logger, level: :info
 #
 config :monkeynote, MonkeynoteWeb.Endpoint,
   # ...,
-  # url: [host: "example.com", port: 443],
-  check_origin: ["https://note.monkeydevs.org", "https://monkeydevs.org", "https://monkeynote.fly.dev"]
+  # url: [host: "https://notes.monkeydevs.org", port: 443],
+  check_origin: ["https://notes.monkeydevs.org", "https://monkeydevs.org", "https://monkeynote.fly.dev"]
   # https: [
   #   ...,
   #   port: 443,
