@@ -15,19 +15,19 @@
 <div id="notes" phx-update="prepend" class="flex flex-col gap-2 w-full mb-5">
   <%= for note <- @notes do %>
     <div id={"note-#{note.id}"} class="bg-slate-800 px-6 py-4 w-auto h-auto break-words rounded flex flex-col gap-1">
-      <h1 class="text-teal-300 text-xl font-bold"><%= note.title %></h1>
-      <span class="whitespace-nowrap overflow-hidden text-ellipsis" ><%= note.body %></span>
+      <h1 class="text-teal-300 text-3xl font-bold"><%= note.title %></h1>
+      <span class="whitespace-nowrap overflow-hidden text-ellipsis text-2xl" ><%= note.body %></span>
 
       <div class="sm:flex gap-2">
-        <p> <span class="font-semibold">Last update: </span><%= note.updated_at %> </p>
-        <div class="ml-auto">
-          <span><%= live_redirect "Show", class: "font-semibold hover:text-teal-500",  to: Routes.note_show_path(@socket, :show, note) %></span>
-          <span><%= live_patch "Edit",    class: "font-semibold hover:text-teal-500",  to: Routes.note_index_path(@socket, :edit, note) %></span>
-          <span><%= link "Delete",        class: "font-semibold hover:text-teal-500",  to: "#", phx_click: "delete", phx_value_id: note.id, data: [confirm: "Are you sure?"] %></span>
+        <p class="text-xl"> <span class="font-semibold">Last update: </span><%= note.updated_at %> </p>
+        <div class="ml-auto flex gap-4">
+          <span><%= live_redirect "Show", class: "text-xl font-semibold hover:text-teal-500",  to: Routes.note_show_path(@socket, :show, note) %></span>
+          <span><%= live_patch "Edit",    class: "text-xl font-semibold hover:text-teal-500",  to: Routes.note_index_path(@socket, :edit, note) %></span>
+          <span><%= link "Delete",        class: "text-xl font-semibold hover:text-teal-500",  to: "#", phx_click: "delete", phx_value_id: note.id, data: [confirm: "Are you sure?"] %></span>
         </div>
       </div>
     </div>
   <% end %>
 </div>
 
-<span class="bg-slate-800 px-4 py-3 rounded font-bold hover:bg-teal-500"><%= live_patch "New Note", to: Routes.note_index_path(@socket, :new) %></span>
+<span class="bg-slate-800 px-4 py-3 rounded text-xl font-bold hover:bg-teal-500"><%= live_patch "New Note", to: Routes.note_index_path(@socket, :new) %></span>

@@ -12,11 +12,13 @@
     height: 100%;
     overflow: auto;
     background-color: rgba(0,0,0,0.4);
+    padding: 5vh 1rem;
   }
   
 .phx-modal-content {
     background-color: #1e293b;
-    margin: 5vh 1rem;
+    max-width: 768px;
+    margin: auto;
     padding: 20px;
     width: auto;
 }
@@ -34,16 +36,3 @@
     text-decoration: none;
     cursor: pointer;
 }
-
-@media only screen and (min-width: 768px) {
-    .phx-modal-content {
-        margin: 5vh 5rem;
-    }
-}
-
-@media only screen and (min-width: 960px) {
-    .phx-modal-content {
-        margin: 5vh 10rem;
-    }
-}
-

@@ -11,16 +11,16 @@
   </.modal>
 <% end %>
 
-<div class="w-full flex break-words flex-col gap-2 bg-slate-800 p-4 rounded">
+<div class="w-full flex break-words flex-col gap-2 bg-slate-800 px-6 py-4 rounded">
   <div class="flex justify-between">
     <h1 class="text-3xl font-bold"><%= @note.title %></h1>  
     <div class="flex gap-2">
-      <span class="bg-slate-700 px-4 py-2 rounded font-bold hover:bg-teal-500"><%= live_patch "Edit", to: Routes.note_show_path(@socket, :edit, @note), class: "button" %></span>
-      <span class="bg-slate-700 px-4 py-2 rounded font-bold hover:bg-teal-500"><%= live_redirect "Back", to: Routes.note_index_path(@socket, :index) %></span>
+      <span class="bg-slate-700 px-4 py-2 rounded text-xl font-bold hover:bg-teal-500"><%= live_patch "Edit", to: Routes.note_show_path(@socket, :edit, @note), class: "button" %></span>
+      <span class="bg-slate-700 px-4 py-2 rounded text-xl font-bold hover:bg-teal-500"><%= live_redirect "Back", to: Routes.note_index_path(@socket, :index) %></span>
     </div>
   </div>
-  <p><span class="font-semibold">Last update:</span> <%= @note.updated_at %> </p>
-  <p class="whitespace-pre-line"><%= @note.body %></p>
+  <p class="text-xl"><span class="font-semibold">Last update:</span> <%= @note.updated_at %> </p>
+  <p class="whitespace-pre-line text-xl"><%= @note.body %></p>
 </div>
 
 
