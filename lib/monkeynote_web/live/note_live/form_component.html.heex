@@ -1,5 +1,5 @@
-<div>
-  <h2><%= @title %></h2>
+<div class="p-4 flex flex-col gap-2">
+  <h2 class="text-2xl font-bold"><%= @title %></h2>
 
   <.form
     let={f}
@@ -7,18 +7,23 @@
     id="note-form"
     phx-target={@myself}
     phx-change="validate"
+    class="flex flex-col gap-1"
     phx-submit="save">
   
-    <%= label f, :title %>
-    <%= text_input f, :title %>
-    <%= error_tag f, :title %>
+    <div class="flex gap-2">
+      <%= label f, :title, class: "font-bold" %>
+      <p class="font-semibold text-red-700"><%= error_tag f, :title %></p>
+    </div>
+    <%= text_input f, :title, class: "w-full rounded text-black" %>
+    
+    <div class="flex gap-2">
+      <%= label f, :body, class: "font-bold" %>
+      <p class="font-semibold text-red-700"><%= error_tag f, :body %></p>
+    </div>
+    <%= textarea f, :body, rows: 15, class: "w-full resize-none rounded text-black" %>
   
-    <%= label f, :body %>
-    <%= textarea f, :body, rows: 15 %>
-    <%= error_tag f, :body %>
-  
-    <div>
-      <%= submit "Save", phx_disable_with: "Saving..." %>
+    <div class="ml-auto">
+      <%= submit "Save", phx_disable_with: "Saving...", class: "bg-teal-500 hover:bg-teal-800 text-white px-4 py-2 rounded" %>
     </div>
   </.form>
 </div>

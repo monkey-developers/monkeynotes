@@ -2,4 +2,48 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+.phx-modal {
+    opacity: 1!important;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+  }
+  
+.phx-modal-content {
+    background-color: #1e293b;
+    margin: 5vh 1rem;
+    padding: 20px;
+    width: auto;
+}
+
+.phx-modal-close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.phx-modal-close:hover,
+.phx-modal-close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@media only screen and (min-width: 768px) {
+    .phx-modal-content {
+        margin: 5vh 5rem;
+    }
+}
+
+@media only screen and (min-width: 960px) {
+    .phx-modal-content {
+        margin: 5vh 10rem;
+    }
+}
 

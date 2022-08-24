@@ -9,11 +9,11 @@
     <link phx-track-static rel="stylesheet" href={Routes.static_path(@conn, "/assets/app.css")}/>
     <script defer phx-track-static type="text/javascript" src={Routes.static_path(@conn, "/assets/app.js")}></script>
   </head>
-  <body class="w-screen">
-    <div class="max-w-2xl m-auto pt-8">
-      <header class="flex justify-between mb-6 place-items-center">
-        <h1 class="text-3xl font-bold">Monkeynote</h1>
-        <h4 class="text-lg">made by: abehidek</h4>
+  <body class="w-screen bg-slate-900 text-white">
+    <div class="max-w-2xl m-auto pt-8 px-2">
+      <header class="sm:flex justify-between mb-6 place-items-center">
+        <a href="/" class="text-3xl font-bold">Monkey<span class="text-teal-300">note</span></a>
+        <h4 class="text-lg">made by: <a href="https://abehidek.me" class="text-teal-300 hover:text-teal-500 font-bold">abehidek</a> </h4>
       </header>
       <%= @inner_content %>
     </div>
