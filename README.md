@@ -1,5 +1,13 @@
 # Monkeynote
 
+## Todo
+
+- Upvote/Downvote
+- User authentication
+- Note ownership
+
+## Setup
+
 To start your Phoenix server:
 
   * Install dependencies with `mix deps.get`
