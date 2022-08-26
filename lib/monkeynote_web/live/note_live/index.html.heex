@@ -12,7 +12,7 @@
 <% end %>
 
 
-<div id="notes" phx-update="prepend" class="flex flex-col gap-2 w-full mb-5">
+<div id="notes" phx-update="replace" class="flex flex-col gap-2 w-full mb-5">
   <%= for note <- @notes do %>
     <div id={"note-#{note.id}"} class="bg-slate-800 px-6 py-4 w-auto h-auto break-words rounded flex flex-col gap-1">
       <h1 class="text-teal-300 text-3xl font-bold"><%= note.title %></h1>

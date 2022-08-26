@@ -7,7 +7,7 @@ defmodule MonkeynoteWeb.NoteLive.Index do
   @impl true
   def mount(_params, _session, socket) do
     if connected?(socket), do: Notebooks.subscribe()
-    {:ok, assign(socket, :notes, list_notes()), temporary_assigns: [notes: []]}
+    {:ok, assign(socket, :notes, list_notes())}
   end
 
   @impl true
@@ -48,7 +48,7 @@ defmodule MonkeynoteWeb.NoteLive.Index do
 
   @impl true
   def handle_info({:note_updated, note}, socket) do
-    {:noreply, update(socket, :notes, fn notes -> [note | notes] end)}
+    {:noreply, update(socket, :notes, fn notes -> [notes] end)}
   end
 
   @impl true

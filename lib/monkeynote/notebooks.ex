@@ -18,7 +18,7 @@ defmodule Monkeynote.Notebooks do
 
   """
   def list_notes do
-    Repo.all(from n in Note, order_by: [desc: n.id])
+    Repo.all(from n in Note, order_by: [desc: n.updated_at])
   end
 
   @doc """
