@@ -2,13 +2,18 @@
 
 ## Todo
 
-- Upvote/Downvote
-- User authentication
-- Note ownership
+- Upvote/Downvote.
+- User authentication.
+- Note ownership.
+- Last updated notes first.
 
 ## Setup
 
-To start your Phoenix server:
+First setup your database config, you can pull an postgres image on dockerhub and run on the console:
+
+`docker run --name monkeynote-db -e POSTGRES_PASSWORD=postgres -d -p 5432:5432 postgres`
+
+Then start your Phoenix server:
 
   * Install dependencies with `mix deps.get`
   * Create and migrate your database with `mix ecto.setup`
