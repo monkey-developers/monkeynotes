@@ -11,9 +11,7 @@
   </.modal>
 <% end %>
 
-<span class="bg-slate-800 px-4 py-3 w-full flex mb-5 rounded text-lg font-bold hover:bg-teal-500">
-  <%= live_patch "New Note", to: Routes.note_index_path(@socket, :new) %>
-</span>
+<%= live_patch "New Note", to: Routes.note_index_path(@socket, :new), class: "bg-slate-800 px-4 py-3 w-full flex mb-5 rounded text-lg font-bold hover:bg-teal-500" %>
 
 <div id="notes" phx-update="replace" class="flex flex-col gap-2 w-full">
   <%= for note <- @notes do %>
